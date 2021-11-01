@@ -131,3 +131,50 @@ OPENING SEQUENCE:
         ~~press i to input a new thingy~~
         ~~ press t to view today's averages~~
 
+
+
+
+data:
+
+
+
+everything starts from that dropdown
+once you start typing, items start populating
+those items are stored in a database
+the database will contain clean info containing:
+    NAME (string)
+    CALORIES, PROTEIN, CARBS, FAT, SUGAR (int)
+once an item has been selected, add that item to the daily class and the weekly class
+
+Food item class (not abstract, serializable, contains variables above)
+
+dailyTotals class (variables will be: totalCal, totalProt, totalCarb which are sums
+    of all the individual FoodItem variables. can use getters or whatever)
+weeklyAverages class
+    call each individual fooditem from each individual dailytotal to calculate averages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
