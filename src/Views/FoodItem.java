@@ -1,18 +1,66 @@
 package Views;
 
 /**
- *
  * FoodItem class stores the information for each food item
  * Variables include name, calorie/protein/fat count, etc
- *
  */
 public class FoodItem {
 
-
+    // Properties
     private String name;
-    private int calories, protein, fat, carbs, sugar, quantity;
+    private int calories, protein, carbs, fat, sugar, quantity;
+
+    /**
+     * Full constructor with all variables creates new FoodItem
+     *
+     * @param name     name of food
+     * @param calories food's cals
+     * @param protein  food's protein
+     * @param carbs    food's carbs
+     * @param fat      food's fat
+     * @param sugar    food's sugar
+     * @param quantity default = 1
+     */
+    public FoodItem(String name, int protein, int calories, int fat, int carbs, int sugar, int quantity) {
+        this.name = name;
+        this.calories = calories;
+        this.protein = protein;
+        this.carbs = carbs;
+        this.fat = fat;
+        this.sugar = sugar;
+        this.quantity = quantity;
+    }
+
+    /**
+     * 1-parameter constructor allows for a single fooditem to be inserted
+     *
+     * @param quantity
+     */
+    public FoodItem(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public FoodItem(FoodItem item, int quantity) {
+        this.name = item.getName();
+        this.calories = item.getCalories();
+        this.protein = item.getProtein();
+        this.carbs = item.getCarbs();
+        this.fat = item.getFat();
+        this.sugar = item.getSugar();
+        this.quantity = quantity;
+    }
+
+    /**
+     * updateQuantity method updates quantity given a value to be added
+     *
+     * @param quantityAdded value to be added
+     */
+    public void updateQuantity(int quantityAdded) {
+        this.setQuantity(this.getQuantity() + quantityAdded);
+    }
 
     // Accessors and mutators
+
     public String getName() {
         return name;
     }
@@ -37,20 +85,20 @@ public class FoodItem {
         this.protein = protein;
     }
 
-    public int getFat() {
-        return fat;
-    }
-
-    public void setFat(int fat) {
-        this.fat = fat;
-    }
-
     public int getCarbs() {
         return carbs;
     }
 
     public void setCarbs(int carbs) {
         this.carbs = carbs;
+    }
+
+    public int getFat() {
+        return fat;
+    }
+
+    public void setFat(int fat) {
+        this.fat = fat;
     }
 
     public int getSugar() {
