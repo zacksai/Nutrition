@@ -1,0 +1,28 @@
+REQUIREMENTS
+
+    track calories
+    solving the problem of DIFFICULT and TEDIOUS diet tracking by making it EASY
+    features:
+        track calories
+        track macros
+        view daily total
+        track progress
+        over/under warnings
+
+DESIGN
+
+    data:
+        all macros input
+        all targets input
+        database of foods!
+   behaviors:
+        gorgeous UI
+        nice stuff to look at like dropdowns and graphs
+        maybe make an ios app?
+
+    first create GUI
+        background classes will become clear
+        user class?
+        something to flesh out
+
+        
