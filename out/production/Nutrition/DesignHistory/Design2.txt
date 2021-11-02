@@ -1,0 +1,13 @@
+CHRONOLOGY:
+
+
+open app and get a intro scene
+
+    INTRO SCENE
+            here's how to use the app: press w for _, i for _, t for _
+            then it prompts you for inputs like height weight etc to calculate tdee
+            it will ask you if you're trying to lose weight, gain weight, or maintain
+
+            this will do the calculation for your target eating
+
+

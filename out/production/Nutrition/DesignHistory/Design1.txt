@@ -1,0 +1,180 @@
+REQUIREMENTS
+
+    track calories
+    solving the problem of DIFFICULT and TEDIOUS diet tracking by making it EASY
+    features:
+        track calories
+        track macros
+        view daily total
+        track progress
+        over/under warnings
+
+DESIGN
+
+    data:
+        all macros input
+        all targets input
+        database of foods!
+   behaviors:
+        gorgeous UI
+        nice stuff to look at like dropdowns and graphs
+        maybe make an ios app?
+
+    first create GUI
+        background classes will become clear
+        user class?
+        something to flesh out
+
+
+
+
+
+
+Scratch:
+
+user should input food eg. an egg
+item should have a quantity option
+macros are added to the total for the day
+total for the day can be viewed somewhere
+
+items eaten in the day can be viewed somewhere too
+
+user will have:
+
+    INPUT PAGE****************************
+        white background turns a pastel color that complements the input object once selected
+        simple text box/input thing
+        populates a list of foods underneath as you type it
+        when you tap a food the white turns to a nice color from 0-100% opacity gently
+            like a meditation app would do
+        the image vector populates
+        feathered, blends with background, beautiful
+
+
+        |----------------|
+        |                |
+        |    |-------|   |
+        |    |       |   |
+        |    |-------|   |
+        |                |
+        |                |
+        |    BOX HERE    |
+        |    >dd1        |
+        |    >dd2        |
+        |    >dd3        |
+        |                |
+        |                |
+        |----------------|
+
+        once item is input, add it to the today page
+
+    TODAY PAGE****************************
+
+        PT 1
+        display total calories, macros compared to target
+        each of these is like a little pie chart/circle chart
+        circle is light by default, a second layer of darker fill is added proportional to
+        %target acquired
+        this repeats in different colors for calories, protein, fats, sugar, etc
+        once you scroll past this part, the second part populates:
+
+        PT 2
+        display foods eaten as you scroll
+            simple rows with:
+                an icon on the left
+                quantity eaten just beside it with some spacing
+                item name just beside it with some spacing
+                and a little down arrow to drop down on the far right
+            when arrow is tapped, item info populates underneath like a spec sheet
+                > cals:
+                > carbs:
+                > fat: [and so on]
+
+        PT 3 (for table geeks)
+        display foods eaten as a table
+        MACRO   QUANTITY    TARGET      PDT (%daily total)
+        protein 30g         100g        30%
+        carbs   20g         200g        10%
+        fats    50g         100g        50%
+        cals    100         300g        100%
+
+
+    WEEK PAGE****************************
+        same as today page but replace daily totals with weekly
+        average (not including current date)
+        display average calories/macros compared to target
+        once you
+
+
+OPENING SEQUENCE:
+
+        |----------------|
+        |                |
+        |                |
+        |                |
+        |   WELCOME      |
+        |       TO       |
+        |          WIT   |
+        |                |
+        |                |
+        |                |
+        |________________|
+        |  W |  I   | T  |
+        |----------------|
+
+        w: week
+        i: input
+        t: today
+
+        tutorial sequence highlights each of the 3 buttons and explains what they do
+        ~~press w to view your weekly averages~~
+        ~~press i to input a new thingy~~
+        ~~ press t to view today's averages~~
+
+
+
+
+data:
+
+
+
+everything starts from that dropdown
+once you start typing, items start populating
+those items are stored in a database
+the database will contain clean info containing:
+    NAME (string)
+    CALORIES, PROTEIN, CARBS, FAT, SUGAR (int)
+once an item has been selected, add that item to the daily class and the weekly class
+
+Food item class (not abstract, serializable, contains variables above)
+
+dailyTotals class (variables will be: totalCal, totalProt, totalCarb which are sums
+    of all the individual FoodItem variables. can use getters or whatever)
+weeklyAverages class
+    call each individual fooditem from each individual dailytotal to calculate averages
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
