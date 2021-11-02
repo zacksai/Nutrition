@@ -8,6 +8,18 @@ import java.util.ArrayList;
  */
 public class DailyTracker {
 
+    public static void main(String[] args) {
+
+        DailyTracker monday = new DailyTracker();
+
+        monday.addItem( new FoodItem("chicken", 20, 40, 5, 0, 0, 2));
+        System.out.println(monday.getTotalCalories());
+        monday.addItem( new FoodItem("chicken", 20, 40, 5, 0, 0, 2));
+        System.out.println(monday.getTotalCalories());
+        monday.addItem( new FoodItem("chicken", 20, 40, 5, 0, 0, 2));
+        System.out.println(monday.getTotalCalories());
+    }
+
     // Properties
     private ArrayList<FoodItem> foodsList;
     private int totalCalories, totalProtein, totalCarbs, totalFat, totalSugar;
@@ -31,7 +43,7 @@ public class DailyTracker {
      *
      * @param newItem item being added
      */
-    private void addItem(FoodItem newItem) {
+    protected void addItem(FoodItem newItem) {
 
         // Check if new item exists in list already
         int z = foodsList.indexOf(newItem);
@@ -43,8 +55,8 @@ public class DailyTracker {
             // If it doesn't, just add it to the list (it's the first of its kind)
             foodsList.add(newItem);
 
-        // Update daily totals accordingly
-        updateDailyTotals(newItem);
+        // Update daily totals
+        updateDailyTotals();
     }
 
     /**
@@ -67,19 +79,6 @@ public class DailyTracker {
         }
     }
 
-    /**
-     * 1-param updateTotals method increments totals given a new item
-     *
-     * @param newItem is the new food item added
-     */
-    private void updateDailyTotals(FoodItem newItem) {
-        int q = newItem.getQuantity();
-        this.setTotalCalories(this.getTotalCalories() + (q * newItem.getCalories()));
-        this.setTotalProtein(this.getTotalProtein() + (q * newItem.getProtein()));
-        this.setTotalCarbs(this.getTotalCarbs() + (q * newItem.getCarbs()));
-        this.setTotalFat(this.getTotalFat() + (q * newItem.getFat()));
-        this.setTotalSugar(this.getTotalSugar() + (q * newItem.getSugar()));
-    }
 
 
     // Accessors and modifiers

@@ -6,6 +6,14 @@ package Views;
  */
 public class FoodItem {
 
+
+    public static void main(String[] args) {
+
+        FoodItem item1 = new FoodItem("egg", 100, 20, 5, 30, 2, 2);
+        System.out.println(item1.getQuantity());
+        item1.updateQuantity(3);
+        System.out.println(item1.getQuantity());
+    }
     // Properties
     private String name;
     private int calories, protein, carbs, fat, sugar, quantity;
@@ -21,7 +29,7 @@ public class FoodItem {
      * @param sugar    food's sugar
      * @param quantity default = 1
      */
-    public FoodItem(String name, int protein, int calories, int fat, int carbs, int sugar, int quantity) {
+    public FoodItem(String name, int calories, int protein, int fat, int carbs, int sugar, int quantity) {
         this.name = name;
         this.calories = calories;
         this.protein = protein;
@@ -56,7 +64,7 @@ public class FoodItem {
      * @param quantityAdded value to be added
      */
     public void updateQuantity(int quantityAdded) {
-        this.setQuantity(this.getQuantity() + quantityAdded);
+        this.quantity += quantityAdded;
     }
 
     // Accessors and mutators

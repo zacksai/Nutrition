@@ -8,6 +8,29 @@ import java.util.ArrayList;
  */
 public class WeeklyTracker {
 
+
+    public static void main(String[] args) {
+
+        DailyTracker monday = new DailyTracker();
+        DailyTracker tuesday = new DailyTracker();
+
+        monday.addItem( new FoodItem("chicken", 20, 40, 5, 0, 0, 5));
+        monday.addItem( new FoodItem("chicken", 20, 40, 5, 0, 0, 3));
+        monday.addItem( new FoodItem("chicken", 20, 40, 5, 0, 0, 7));
+
+        tuesday.addItem(new FoodItem("egg", 100, 20, 5, 30, 2, 3));
+        tuesday.addItem(new FoodItem("egg", 100, 20, 5, 30, 2, 2));
+        tuesday.addItem(new FoodItem("egg", 100, 20, 5, 30, 2, 1));
+
+        System.out.println(monday.getTotalCalories() + ", " + tuesday.getTotalCalories());
+
+        WeeklyTracker thisWeek = new WeeklyTracker();
+        thisWeek.addDailyTotals(monday);
+        thisWeek.addDailyTotals(tuesday);
+        System.out.println(thisWeek.avgCalories);
+    }
+
+
     // Properties
     private ArrayList<DailyTracker> daysList;
     private int avgCalories, avgProtein, avgCarbs, avgFat, avgSugar;
